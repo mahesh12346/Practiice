@@ -1,0 +1,55 @@
+﻿@model IEnumerable<EmployeeModel>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+    </style>
+</head>
+<body>
+    <h1>Number of Records Found : @Model.Count(); </h1>
+
+    <div style="overflow-x:auto;">
+        <table>
+            <tr>
+
+                <th>empno</th>
+                <th>birthdate</th>
+                <th>firts_name</th>
+                <th>last_name</th>
+                <th>gender</th>
+                <th>hire_date</th>
+
+            </tr>
+            @foreach (var emp in @Model.ToList())
+            {
+        <tr>
+
+            <th>@emp.empno</th>
+            <th>@emp.birthdate</th>
+            <th>@emp.firts_name</th>
+            <th>@emp.last_name</th>
+            <th>@emp.gender</th>
+            <th>@emp.hire_date</th>
+        </tr>
+            }
+        </table>
+    </div>
+
+</body>
+</html>
